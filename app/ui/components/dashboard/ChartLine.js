@@ -10,17 +10,14 @@ export default function ChartLine({title='Mi gráfico de Highcharts',data, xAxis
       text: title
     },
     xAxis: xAxisConfig,
-    series:  data
+    yAxis:{title : null} ,
+    series:  data,
+    subtitle : {text : 'Fuente: Estación Meteorológica UDEP'},
   };
   return (
-    <div className='w-full h-full rounded-lg flex items-center'>
-      <section className='w-full' >
-      <HighchartsReact
-        highcharts={Highcharts}
-        options={chartOptions}
-      />
-
-      </section>
-    </div>
+    <HighchartsReact
+    highcharts={Highcharts}
+    options={chartOptions}
+  />
   )
 }

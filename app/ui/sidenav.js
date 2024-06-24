@@ -9,7 +9,9 @@ export default function Dashboard() {
     {routeName : "Temperatura", routeHref:"/dashboard/temperatura"},
     {routeName:"Punto de Rocio", routeHref:"/dashboard/puntoRocio"},
     { routeName : "Radiacion Solar", routeHref : '/dashboard/radiacion'},
-    {routeName:"Lluvia", routeHref:"/dashboard/lluvia"}
+    {routeName:"Lluvia", routeHref:"/dashboard/lluvia"},
+    {routeName : "Velocidad del Viento", routeHref:"/dashboard/windspeed"},
+    {routeName:"Dirección del Viento", routeHref:"/dashboard/winddirection"}
   ]
   return (
     <div className='flex h-full flex-col px-3 py-4 md:px-2'>

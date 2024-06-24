@@ -45,19 +45,21 @@ export default function Page() {
         setTimeStart={setTimeStart}
         handleSubmit={handleSubmit}
       />
-      <section className='w-full bg-white h-screen rounded-lg mt-4 flex items-center justify-center'>
-        { loading || loadingData ? <p>Cargando datos ... </p> : <ChartLine title='Gráfico de Punto de Rocío' data={
+      <section className='w-full  mt-4 flex items-center justify-center'>
+        <div className='w-full min-h-[400px] px-4 py-24 bg-white rounded-lg'>
+        { loading || loadingData ? <p>Cargando datos ... </p> : <ChartLine title='Gráfico de Temperatura' data={
                 [
                     {
-                        data : dataHobo['Dew Point']['si'],
+                        data : dataHobo['Temperature']['si'],
                         lineWidth: 0.5,
-                        name: 'Punto de Rocio en SI'
+                        name: 'Temperatura en SI'
                     }
                 ]
             } xAxisConfig={{
-                categories : dataHobo['Dew Point']['time']
-            }}/>}  
-      </section>
+                categories : dataHobo['Temperature']['time']
+            }}/>}
+        </div>
+        </section>
     </div>
   )
 }

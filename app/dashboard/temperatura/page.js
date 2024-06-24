@@ -36,7 +36,7 @@ export default function Page() {
       setLoadingData(false);
   }
   return (
-    <div className='bg-gray-300 w-full h-screen px-6 flex flex-col'>
+    <div className='bg-gray-300 w-full h-screen px-6 flex flex-col pt-4'>
       <FilterButtonsChart
         valuesStartTime={timeStart}
         valuesEndTime={timeEnd}
@@ -46,8 +46,9 @@ export default function Page() {
         setTimeStart={setTimeStart}
         handleSubmit={handleSubmit}
       />
-      <section className='w-full bg-white h-screen rounded-lg mt-4 flex items-center justify-center'>
-            { loading || loadingData ? <p>Cargando datos ... </p> : <ChartLine title='Gráfico de Temperatura' data={
+      <section className='w-full  mt-4 flex items-center justify-center'>
+        <div className='w-full min-h-[400px] px-4 py-24 bg-white rounded-lg'>
+        { loading || loadingData ? <p>Cargando datos ... </p> : <ChartLine title='Gráfico de Temperatura' data={
                 [
                     {
                         data : dataHobo['Temperature']['si'],
@@ -58,6 +59,7 @@ export default function Page() {
             } xAxisConfig={{
                 categories : dataHobo['Temperature']['time']
             }}/>}
+        </div>
         </section>
 
     </div>
